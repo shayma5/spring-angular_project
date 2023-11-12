@@ -1,0 +1,55 @@
+<!-- This is an example component -->
+<div class="max-w-4xl mx-auto"  >
+
+	<div class="flex flex-col mt-20">
+    <div class="overflow-x-auto shadow-md sm:rounded-lg">
+        <div class="inline-block min-w-full align-middle">
+            <div class="overflow-hidden ">
+
+              <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
+                    <thead class="bg-gray-100 dark:bg-gray-700">
+                        <tr>
+
+                            <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                 First Name
+                            </th>
+                            <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                Last Name
+                            </th>
+                            <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                Ecole
+                            </th>
+                            <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                             Birthdate
+                          </th>
+                            <th scope="col" class="p-4">
+                              <a routerLink="/new" type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                                Add Etudiant
+                              </a>                            </th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700" *ngFor="let etudiants of etudiants">
+                        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+
+                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ etudiants.nomEt }}</td>
+                            <td class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">{{ etudiants.prenomEt }}</td>
+                            <td class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">{{ etudiants.ecole }}</td>
+                            <td class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">{{ etudiants.dateNaissance }}</td>
+                             <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                                <a style=" cursor: pointer"  class="text-blue-600 dark:text-blue-500 hover:underline" (click)="delete(etudiants.idEtudiant)">Delete</a>
+                            </td>
+                            <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                              <a [routerLink]="['/update',etudiants.idEtudiant]" style=" cursor: pointer"  class="text-blue-600 dark:text-blue-500 hover:underline" >Update</a>
+                          </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
